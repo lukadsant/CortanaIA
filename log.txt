@@ -23,3 +23,8 @@
 [2025-03-26 11:03:30] (Assistente) Mensagem: Olá caro usuario | Imagem: https://static.wikia.nocookie.net/halo/images/c/c0/CortanaHalo5.png/revision/latest?cb=20211012223501&path-prefix=pt
 [2025-03-26 11:07:10] (Usuário) Mensagem: voc�e
 [2025-03-26 11:07:58] (Usuário) Mensagem: cafe
+[2025-03-26 11:49:25] (Usuário) Mensagem: Apenas um texto qualquer
+[2025-03-26 11:50:12] (Assistente) Mensagem: Dale boi Primeira mensagem | Imagem: https://static.wikia.nocookie.net/halo/images/c/c0/CortanaHalo5.png/revision/latest?cb=20211012223501&path-prefix=pt
+[2025-03-26 11:51:39] (Assistente) Mensagem: xxxx boi Primeira mensagem | Imagem: https://static.wikia.nocookie.net/halo/images/c/c0/CortanaHalo5.png/revision/latest?cb=20211012223501&path-prefix=pt
+[2025-03-26 11:52:07] (Usuário) Mensagem: Apenas um texto qualquer
+[2025-03-26 11:54:07] (Usuário) Mensagem: Apenas um texto qualquer

@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"regexp"
+	"strings"
 	"time"
 )
 
@@ -18,6 +20,13 @@ type PostData struct {
 
 type TextData struct {
 	Message string `json:"message"`
+}
+
+type LogEntry struct {
+	Timestamp string `json:"timestamp"`
+	Source    string `json:"source"`
+	Message   string `json:"message"`
+	ImageURL  string `json:"image_url,omitempty"`
 }
 
 // Caminhos dos arquivos
@@ -130,10 +139,83 @@ func textHandler(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+// Handler para GET "/logs" (exibe o conteúdo do log)
+func logsHandler(w http.ResponseWriter, r *http.Request) {
+	// Ler o arquivo de log
+	data, err := ioutil.ReadFile(logFile)
+	if err != nil {
+		http.Error(w, "Erro ao carregar logs", http.StatusInternalServerError)
+		return
+	}
+
+	// Converter os logs para um formato mais legível em JSON
+	var logEntries []LogEntry
+	logLines := string(data)
+
+	// Dividir o arquivo de log em linhas
+	lines := splitLines(logLines)
+	for _, line := range lines {
+		// Ignorar linhas vazias
+		if line == "" {
+			continue
+		}
+
+		// Processar cada linha de log e extrair os dados usando expressões regulares
+		logEntry := parseLogLine(line)
+		logEntries = append(logEntries, logEntry)
+	}
+
+	// Enviar os logs em formato JSON
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(logEntries)
+}
+
+// Função para dividir as linhas do log
+func splitLines(logData string) []string {
+	return strings.Split(logData, "\n")
+}
+
+// Função para analisar uma linha de log e extrair as informações
+func parseLogLine(line string) LogEntry {
+	// Usar uma expressão regular para capturar os dados da linha
+	// O formato da expressão regular deve corresponder ao formato do seu log
+	// Agora, a captura do campo de imagem será opcional
+	re := regexp.MustCompile(`\[(.*?)\] \((.*?)\) Mensagem: (.*?) \|? Imagem: (.*)`)
+	matches := re.FindStringSubmatch(line)
+
+	if len(matches) == 0 {
+		// Verificar se a linha é do tipo "Usuário" sem imagem
+		reUser := regexp.MustCompile(`\[(.*?)\] \((.*?)\) Mensagem: (.*?)$`) // Alterado para garantir captura até o final
+		matchesUser := reUser.FindStringSubmatch(line)
+
+		if len(matchesUser) > 0 {
+			// Linha do usuário sem imagem
+			return LogEntry{
+				Timestamp: matchesUser[1],
+				Source:    matchesUser[2],
+				Message:   matchesUser[3],
+				ImageURL:  "", // Garantir que o campo de imagem fique vazio
+			}
+		}
+
+		// Caso não consiga extrair os dados, retorna um LogEntry com valores padrão
+		return LogEntry{}
+	}
+
+	// Caso encontre os dados com a imagem
+	return LogEntry{
+		Timestamp: matches[1],
+		Source:    matches[2],
+		Message:   matches[3],
+		ImageURL:  matches[4],
+	}
+}
+
 func main() {
 	http.HandleFunc("/", helloWorldHandler)
 	http.HandleFunc("/post", postHandler)
 	http.HandleFunc("/text", textHandler)
+	http.HandleFunc("/logs", logsHandler) // Novo endpoint para obter os logs
 
 	log.Println("Servidor rodando na porta 8080...")
 	log.Fatal(http.ListenAndServe(":8080", nil))
