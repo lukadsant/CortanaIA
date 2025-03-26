@@ -1,0 +1,25 @@
+[2025-03-26 10:25:40] Mensagem: Olá, cafe! | Imagem: https://example.com/image.jpg
+[2025-03-26 10:25:46] Mensagem: Olá, cafex! | Imagem: https://example.com/image.jpg
+[2025-03-26 10:30:06] (Assistente) Mensagem: Primeira mensagem | Imagem: https://example.com/image1.jpg
+[2025-03-26 10:30:14] (Usuário) Mensagem: Apenas um texto qualquer
+[2025-03-26 10:36:13] (Usuário) Mensagem: Apenas um texto qualquer
+[2025-03-26 10:38:14] (Usuário) Mensagem: cafe
+[2025-03-26 10:40:32] (Assistente) Mensagem: Dale boi Primeira mensagem | Imagem: https://static.wikia.nocookie.net/halo/images/c/c0/CortanaHalo5.png/revision/latest?cb=20211012223501&path-prefix=pt
+[2025-03-26 10:43:45] (Assistente) Mensagem: Dale boi Primeira mensageadasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssm | Imagem: https://static.wikia.nocookie.net/halo/images/c/c0/CortanaHalo5.png/revision/latest?cb=20211012223501&path-prefix=pt
+[2025-03-26 10:44:11] (Usuário) Mensagem: nop
+[2025-03-26 10:46:41] (Usuário) Mensagem: Apenas um texto qualquer
+[2025-03-26 10:47:43] (Usuário) Mensagem: ...
+[2025-03-26 10:47:52] (Usuário) Mensagem: vtnc
+[2025-03-26 10:48:56] (Usuário) Mensagem: cafe
+[2025-03-26 10:53:01] (Usuário) Mensagem: cafe
+[2025-03-26 10:53:32] (Usuário) Mensagem: cafe
+[2025-03-26 10:53:53] (Usuário) Mensagem: cafe
+[2025-03-26 10:54:10] (Usuário) Mensagem: cafe
+[2025-03-26 10:56:57] (Usuário) Mensagem: cafe
+[2025-03-26 10:57:59] (Usuário) Mensagem: oxi que � tu?
+[2025-03-26 10:59:08] (Usuário) Mensagem: cafe
+[2025-03-26 10:59:47] (Usuário) Mensagem: cafe
+[2025-03-26 11:02:27] (Usuário) Mensagem: cafe
+[2025-03-26 11:03:30] (Assistente) Mensagem: Olá caro usuario | Imagem: https://static.wikia.nocookie.net/halo/images/c/c0/CortanaHalo5.png/revision/latest?cb=20211012223501&path-prefix=pt
+[2025-03-26 11:07:10] (Usuário) Mensagem: voc�e
+[2025-03-26 11:07:58] (Usuário) Mensagem: cafe
